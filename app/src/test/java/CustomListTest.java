@@ -39,4 +39,16 @@ public class CustomListTest {
         list.deleteCity(testCity);
         assertEquals(list.getCount(), listSize - 1);
     }
+
+    @Test
+    public void countCitiesTest() {
+        String []cityNames = {"Edmonton", "Calgary", "Vancouver", "Montreal"};
+        String []provinceNames = {"AB", "AB", "BC", "QC"};
+        for (int i=0; i < cityNames.length; i++) {
+            list.addCity(new City(cityNames[i], provinceNames[i]));
+        }
+
+        assertEquals(list.countCities(), cityNames.length);
+
+    }
 }
